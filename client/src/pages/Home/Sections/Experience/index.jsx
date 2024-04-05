@@ -4,9 +4,9 @@ import styled from "styled-components";
 import Section from '../../../../components/Section';
 
 const ExperienceTitle = styled.h2`
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 500;
 
 `;
 
@@ -17,6 +17,7 @@ const ExperienceDate = styled.div`
     width: 225px;
     padding-right: 5px;
     font-style: italic;
+    margin-bottom: 5px;
     @media screen and (min-width: 970px){
 min-width: 200px;
 }
@@ -24,6 +25,7 @@ min-width: 200px;
 
 const ExperienceItem = styled.div`
 margin-bottom: 10px;
+margin-top: 10px;
 
 @media screen and (min-width: 970px){
     display: flex;
@@ -59,49 +61,44 @@ background-color: #40cf8f0f;
 }
 `;
 
+const experiences = [
+  {
+    date: "Sep 2023 - Feb 2024",
+    title: "Boval Assurantien B.V. - Data Engineer",
+    description: "Worked on developing chatbot solutions to help digitize societies around the world, using AI technologies such as ChatGPT to enhance services in cities. I focused on creating user interfaces and backend APIs, utilizing a range of technologies with the goal of contributing to global digital transformation. To ensure our platforms were strong and worked well, I implemented comprehensive testing with Cypress. I also used Insomnia for effective API testing, which helped make our development process smoother and our products more reliable. Experienced in Scrum, I effectively managed tasks and collaborated with the team to meet our goals.",
+    technologies: ["AI", "ChatGPT", "Cypress", "Insomnia", "Scrum"]
+  },
+  {
+    date: "Mar 2024 - Present",
+    title: "Dealblock Labs - Blockchain Developer",
+    description: "Involved in the development and deployment of blockchain solutions. My responsibilities included smart contract development, blockchain architecture design, and integration of blockchain with existing systems. Utilized Solidity for smart contracts and worked with Ethereum and Binance Smart Chain networks. Played a key role in developing decentralized applications (DApps) that offer transparency and security.",
+    technologies: ["Blockchain", "Solidity", "Ethereum", "Binance Smart Chain", "DApps"]
+  },
+  // Add more experiences here
+];
+
 const Experience = () => {
   return (
     <Section>
-
-    <Section.Heading>Experience</Section.Heading>
-    <ExperienceItem>
-      <ExperienceDate>Sep 2023 - Feb 2024</ExperienceDate>
-      <div>
-
-      <ExperienceTitle>Boval Assurantien B.V. - Data Engineer</ExperienceTitle>
-      <TextBlock>
-      <Section.Text>Worked on developing chatbot solutions to help digitize societies around the world, using AI technologies such as ChatGPT to enhance services in cities. I focused on creating user interfaces and backend APIs, utilizing a range of technologies with the goal of contributing to global digital transformation. To ensure our platforms were strong and worked well, I implemented comprehensive testing with Cypress. I also used Insomnia for effective API testing, which helped make our development process smoother and our products more reliable. Experienced in Scrum, I effectively managed tasks and collaborated with the team to meet our goals.</Section.Text>
-      </TextBlock>
-    <ExperienceTechnologies>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    </ExperienceTechnologies>
-      </div>
-    </ExperienceItem>
-    <ExperienceItem>
-    <ExperienceDate>Sep 2023 - Feb 2024</ExperienceDate>
-    <div>
-
-      <ExperienceTitle>Dealblock Labs - Blockchain Developer</ExperienceTitle>
-      <TextBlock>
-      <Section.Text>Worked on developing chatbot solutions to help digitize societies around the world, using AI technologies such as ChatGPT to enhance services in cities. I focused on creating user interfaces and backend APIs, utilizing a range of technologies with the goal of contributing to global digital transformation. To ensure our platforms were strong and worked well, I implemented comprehensive testing with Cypress. I also used Insomnia for effective API testing, which helped make our development process smoother and our products more reliable. Experienced in Scrum, I effectively managed tasks and collaborated with the team to meet our goals.</Section.Text>
-      </TextBlock>
-    <ExperienceTechnologies>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    <ExperienceTechnology>123</ExperienceTechnology>
-    </ExperienceTechnologies>
-    </div>
-    </ExperienceItem>
+      <Section.Heading>Experience</Section.Heading>
+      {experiences.map((exp, index) => (
+        <ExperienceItem key={index}>
+          <ExperienceDate>{exp.date}</ExperienceDate>
+          <div>
+            <ExperienceTitle>{exp.title}</ExperienceTitle>
+            <TextBlock>
+              <Section.Text>{exp.description}</Section.Text>
+            </TextBlock>
+            <ExperienceTechnologies>
+              {exp.technologies.map((tech, techIndex) => (
+                <ExperienceTechnology key={techIndex}>{tech}</ExperienceTechnology>
+              ))}
+            </ExperienceTechnologies>
+          </div>
+        </ExperienceItem>
+      ))}
     </Section>
-  )
+  );
 }
 
 export default Experience

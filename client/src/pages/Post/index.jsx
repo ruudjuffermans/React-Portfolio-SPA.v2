@@ -1,107 +1,151 @@
+import CodeBox from "../../components/CodeBox";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import gradient from "../../../../assets/gradient-625d94e6.webp";
 
-const HeroTitle = styled.h1`
+const Outside = styled.div`
+  margin: 0 auto;
+  max-width: 1400px;
+`;
+
+const Wrapper = styled.div`
+  margin: 0 auto 0;
+  padding: 15px;
+  max-width: 1000px;
+`;
+
+const ImageBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    padding: 30px 0;
+  }
+`;
+
+const Text = styled.p`
+  line-height: 2;
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+  @media screen and (min-width: 650px) {
+    font-size: 16px;
+  }
+`;
+
+const UnorderedList = styled.ul`
+  list-style-position: inside;
+  padding-left: 20px;
+  margin: 10px 0;
+  font-size: 14px;
+  li {
+    line-height: 2;
+  }
+
+@media screen and (min-width: 650px) {
+  font-size: 16px;
+}
+`;
+
+const OrderedList = styled.ol`
+  list-style-position: inside;
+  padding-left: 20px;
+  margin: 10px 0;
+  font-size: 14px;
+
+  li {
+    line-height: 2;
+  }
+
+@media screen and (min-width: 650px) {
+  font-size: 16px;
+}
+`;
+
+const PostTitle = styled.h1`
   z-index: 1;
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  font-size: 75px;
-  margin-bottom: 20px;
+  text-align: center;
+  margin: 50px auto;
+  font-size: 60px;
 
-  :first-child {
-    background: -webkit-linear-gradient(#fff, #a5a5a5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  :last-child {
-    background: -webkit-linear-gradient(#58ffb4, #289061);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background: -webkit-linear-gradient(#fff, #a5a5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   @media screen and (max-width: 1024px) {
     font-size: 60px;
   }
 
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 650px) {
     font-size: 40px;
   }
 `;
 
-const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-`;
-const StyledGradient = styled.img`
-  top: 0;
-  width: 150%;
-  max-width: 100vw;
-  position: absolute;
-  opacity: 0.5;
+const Heading = styled.h3`
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  @media screen and (min-width: 650px) {
+    font-size: 22px;
+  }
 `;
 
-const HeroDescription = styled.p`
-  max-width: 750px;
-  line-height: 1.6;
-  font-size: 18px;
-  font-weight: 100;
-  opacity: 0.8;
+const SubHeading = styled.h4`
+  line-height: 2;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
 
-  @media screen and (max-width: 1024px) {
-    max-width: 700px;
+  @media screen and (min-width: 650px) {
     font-size: 16px;
   }
-
-  @media screen and (max-width: 680px) {
-    max-width: 450px;
-    font-size: 14px;
-  }
 `;
 
-const Wrapper = styled.div`
-  -webkit-user-select: none;
-  max-width: 100vw;
-  overflow: hidden;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
-  background-color: grey;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: linear-gradient(
-    180deg,
-    black,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.1),
-    ${(props) => props.theme.colors.black}
-  );
 
-  @media screen and (max-width: 1024px) {
-    height: 65vh;
-  }
+const Post = () => {
+  const [post, setPost] = useState(null);
+  const [imageSrc, setImageSrc] = useState(null);
+  const { id } = useParams();
 
-  @media screen and (max-width: 680px) {
-    height: 60vh;
-  }
-`;
+  useEffect(() => {
+    const jsonFiles = require.context("./posts", false, /\.json$/);
 
-const Hero = () => {
+    const findJsonWithIdOne = () => {
+      const fileNames = jsonFiles.keys();
+
+      const matchingFiles = fileNames.filter((fileName) => {
+        const jsonData = jsonFiles(fileName);
+        return jsonData.id === id;
+      });
+
+      setPost(jsonFiles(matchingFiles));
+    };
+
+    findJsonWithIdOne();
+  }, [id]);
+
+  useEffect(() => {
+    if (post != null) {
+      import(`./posts/${post.image}`)
+        .then((image) => {
+          setImageSrc(image.default);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [post]);
+
+  if (post == null) return null;
+
   return (
-    <Wrapper>
+    <Outside>
       <svg
         className="hero-stars"
         xmlns="http://www.w3.org/2000/svg"
@@ -109,6 +153,7 @@ const Hero = () => {
         height="730"
         viewBox="0 0 1680 730"
         fill="none"
+        style={{zIndex: -1}}
       >
         <circle
           cx="0.6"
@@ -357,20 +402,46 @@ const Hero = () => {
           fill="white"
         ></circle>
       </svg>
-      <StyledGradient src={gradient} />
-      <HeroContent>
-        <HeroTitle>
-          <span>Hello. I'm Ruud.</span>
-          <span>A Data Engineer.</span>
-        </HeroTitle>
-        <HeroDescription>
-          I'm passionate about designing and managing data architectures that
-          are scalable, efficient, and that meet the organization's analytical
-          needs.
-        </HeroDescription>
-      </HeroContent>
-    </Wrapper>
+
+      <Wrapper>
+        <PostTitle>{post.title}</PostTitle>
+        <ImageBox>
+          <img alt="thumbnail" src={imageSrc} />
+        </ImageBox>
+        {post.content.map(({ value, id, tag }) => {
+          switch (tag) {
+            case "Text":
+              return <Text key={id}>{value}</Text>;
+              case "Heading":
+                return <Heading key={id}>{value}</Heading>;            
+            case "SubHeading":
+                return <SubHeading key={id}>{value}</SubHeading>;
+            case "CodeBox":
+              return <CodeBox key={id}>{value}</CodeBox>;
+            case "ol":
+              return (
+                <OrderedList key={id}>
+                  {value.map(({ value, id }) => (
+                    <li key={id}>{value}</li>
+                  ))}
+                </OrderedList>
+              );
+            case "ul":
+              return (
+                <UnorderedList key={id}>
+                  {value.map(({ value, id }) => (
+                    <li key={id}>{value}</li>
+                  ))}
+                </UnorderedList>
+              );
+            default:
+              const Tag = tag;
+              return <Tag key={id}>{value}</Tag>;
+          }
+        })}
+      </Wrapper>
+    </Outside>
   );
 };
 
-export default Hero;
+export default Post;

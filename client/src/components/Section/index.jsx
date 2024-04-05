@@ -9,24 +9,22 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.p`
-  line-height: 1.3;
+  line-height: 1.5;
   font-size: 14px;
   font-weight: 300;
 
   @media screen and (min-width: 650px) {
-    line-height: 1.3;
     font-size: 16px;
-    font-weight: 300;
   }
 `;
 
 const Heading = styled.h1`
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   margin-bottom: 5px;
 
   @media screen and (min-width: 650px) {
-    font-size: 22px;
+    font-size: 24px;
   }
 `;
 
