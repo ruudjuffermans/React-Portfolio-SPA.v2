@@ -10,8 +10,8 @@ const projects = [
   {
     title: "Portfolio Website",
     github: "https://github.com/ruudjuffermans/React-Portfolio-SPA.v2",
-    website: "www.ruudjuffermans.nl",
-    keywords: ["React", "Node.js", "Socket.io"],
+    website: "https://ruudjuffermans.nl",
+    keywords: ["React", "Node.js"],
   },
 ];
 
@@ -36,12 +36,12 @@ const Projects = () => {
         {projects.map((project, index) => (
           <Card key={index}>
             <Card.Actions>
-            <Link to={project.website}>
-                  <img src={LinkIcon} alt="" />
-                </Link>
-                <Link to={project.github}>
-                  <img src={GithubIcon} alt="" />
-                </Link>
+              <a href={project.website}>
+                <img src={LinkIcon} alt="" />
+              </a>
+              <Link to={project.github}>
+                <img src={GithubIcon} alt="" />
+              </Link>
             </Card.Actions>
             <Card.Title>{project.title}</Card.Title>
             <Card.KeyWords>

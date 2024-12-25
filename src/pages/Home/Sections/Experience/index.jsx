@@ -63,18 +63,23 @@ background-color: #40cf8f0f;
 
 const experiences = [
   {
-    date: "Sep 2023 - Feb 2024",
-    title: "Boval Assurantien B.V. - Data Engineer",
-    description: "Worked on developing chatbot solutions to help digitize societies around the world, using AI technologies such as ChatGPT to enhance services in cities. I focused on creating user interfaces and backend APIs, utilizing a range of technologies with the goal of contributing to global digital transformation. To ensure our platforms were strong and worked well, I implemented comprehensive testing with Cypress. I also used Insomnia for effective API testing, which helped make our development process smoother and our products more reliable. Experienced in Scrum, I effectively managed tasks and collaborated with the team to meet our goals.",
-    technologies: ["AI", "ChatGPT", "Cypress", "Insomnia", "Scrum"]
+    "date": "Mar 2024 - Present",
+    "title": "Nederlands Lucht- en Ruimtevaartcentrum",
+    "description": "Contributing to multiple cutting-edge projects at the intersection of cybersecurity, IoT, and blockchain technologies. Key responsibilities include designing and developing robust data systems tailored for advanced use cases, with a focus on secure and scalable solutions. Collaborated closely with multidisciplinary teams to deliver impactful digital tools and simulations.",
+    "technologies": ["Digital Product Passports", "Databases", "Hyperledger Fabric", "Full-Stack Applications", "Digital Twin Simulations"]
   },
   {
-    date: "Mar 2024 - Present",
+    date: "Sep 2019 - Dec 2023",
     title: "Dealblock Labs - Blockchain Developer",
     description: "Involved in the development and deployment of blockchain solutions. My responsibilities included smart contract development, blockchain architecture design, and integration of blockchain with existing systems. Utilized Solidity for smart contracts and worked with Ethereum and Binance Smart Chain networks. Played a key role in developing decentralized applications (DApps) that offer transparency and security.",
     technologies: ["Blockchain", "Solidity", "Ethereum", "Binance Smart Chain", "DApps"]
   },
-  // Add more experiences here
+  {
+    date: "Sep 2023 - Feb 2024",
+    title: "Boval Assurantien B.V. - Data Engineer",
+    description: "Worked on developing chatbot solutions to help digitize societies around the world, using AI technologies such as ChatGPT to enhance services in cities. I focused on creating user interfaces and backend APIs, utilizing a range of technologies with the goal of contributing to global digital transformation. To ensure our platforms were strong and worked well, I implemented comprehensive testing with Cypress. I also used Insomnia for effective API testing, which helped make our development process smoother and our products more reliable. Experienced in Scrum, I effectively managed tasks and collaborated with the team to meet our goals.",
+    technologies: ["AI", "ChatGPT", "Cypress", "Insomnia", "Scrum"]
+  }
 ];
 
 const Experience = () => {

@@ -1,0 +1,64 @@
+{
+  "id": "6",
+  "date": "2024-12-24",
+  "title": "My Favorite Reads of 2024",
+  "image": "reads.png",
+  "read": 6,
+  "content": [
+    {
+      "id": 2,
+      "tag": "Text",
+      "value": "Another year has passed, a year with new books. Here's a list of my favourite books I read in 2024"
+    },
+    {
+      "id": 3,
+      "tag": "Heading",
+      "value": "1. \"Crime and Punishment\" by Fyodor Dostoevsky"
+    },
+    {
+      "id": 4,
+      "tag": "Text",
+      "value": "A masterpiece of psychological realism, \"Crime and Punishment\" dives into the mind of Raskolnikov, a conflicted and tormented protagonist. Dostoevsky's exploration of morality, guilt, and redemption offers a timeless commentary on the human condition. This book left me deeply reflective about the complexity of justice and the power of conscience."
+    },
+    {
+      "id": 5,
+      "tag": "Heading",
+      "value": "2. \"Anna Karenina\" by Leo Tolstoy"
+    },
+    {
+      "id": 6,
+      "tag": "Text",
+      "value": "\"Anna Karenina\" is a tale of love, betrayal, and the societal norms that shape our lives. Tolstoy's intricate narrative weaves together the lives of multiple characters, with Anna's tragic romance at the center. This novel is as much about human relationships as it is about the clash between passion and duty. A true classic that remains poignant to this day."
+    },
+    {
+      "id": 7,
+      "tag": "Heading",
+      "value": "3. \"The Creative Act: A Way of Being\" by Rick Rubin"
+    },
+    {
+      "id": 8,
+      "tag": "Text",
+      "value": "Rick Rubin offers a unique and philosophical perspective on the nature of creativity in \"The Creative Act.\" Drawing from his experience as a legendary music producer, Rubin delves into the essence of creativity, providing insights and practices for cultivating a creative mindset. This book is a treasure trove for anyone seeking inspiration and a deeper connection to their creative spirit."
+    },
+    {
+      "id": 9,
+      "tag": "Heading",
+      "value": "4. \"How to Win Friends and Influence People\" by Dale Carnegie"
+    },
+    {
+      "id": 10,
+      "tag": "Text",
+      "value": "Dale Carnegie's classic remains as relevant today as when it was first published. With timeless advice on building relationships and communicating effectively, \"How to Win Friends and Influence People\" is a must-read for personal and professional growth. The principles outlined in this book have had a lasting impact on how I approach interactions and collaborations."
+    },
+    {
+      "id": 11,
+      "tag": "Heading",
+      "value": "Conclusion"
+    },
+    {
+      "id": 12,
+      "tag": "Text",
+      "value": "This past year, I found myself diving into more literature and fewer self-help titles, and I thoroughly enjoyed it! So in next years list perhaps even more timeless classics, or not, who knows!"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+    "id": "5",
+    "date": "2024-12-25",
+    "title": "DeFi: Impermanent Loss Explained",
+    "image": "pool.png",
+    "read": 8,
+    "content": [
+        {
+            "id": 1,
+            "tag": "Text",
+            "value": "You can potentially lose money when you provide liquidity to a liquidity pool if the price of the tokens in the pool changes significantly. This phenomenon is called impermanent loss."
+        },
+        {
+            "id": 2,
+            "tag": "Heading",
+            "value": "What is impermanent loss"
+        },
+        {
+            "id": 3,
+            "tag": "Text",
+            "value": "Impermanent loss occurs when the ratio of the tokens in the liquidity pool changes due to price fluctuations in the market. Liquidity pools operate on an automated market maker (AMM) model, such as Uniswap, where the pool maintains a constant product formula:"
+        },
+        {
+            "id": 4,
+            "tag": "CodeBox",
+            "value": "x ⋅ y = k"
+          },
+          {
+            "id": 4,
+            "tag": "Text",
+            "value": "Here:"
+          },
+        {
+            "id": 6,
+            "tag": "ul",
+            "value": [
+                {
+                    "id": 1,
+                    "tag": "li",
+                    "value": "x = quantity of Token A"
+                },
+                {
+                    "id": 2,
+                    "tag": "li",
+                    "value": "y = quantity of Token B"
+                },
+                {
+                    "id": 3,
+                    "tag": "li",
+                    "value": "k = constant product"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "tag": "Text",
+            "value": "If the price of one token changes relative to the other, the pool adjusts the quantities of the tokens to maintain this formula. As a result, the ratio of the tokens in the pool changes, and the value of your assets in the pool may differ from what you'd have if you simply held the tokens outside the pool."
+        },
+        {
+            "id": 8,
+            "tag": "Heading",
+            "value": "Example of Impermanent Loss"
+        },
+        {
+            "id": 9,
+            "tag": "Text",
+            "value": "Imagine you provide liquidity to a pool containing ETH and USDC. The initial price of ETH is $1,000, and you provide:"
+        },
+        {
+            "id": 10,
+            "tag": "ol",
+            "value": [
+                {
+                    "id": 1,
+                    "tag": "li",
+                    "value": "1 ETH"
+                },
+                {
+                    "id": 2,
+                    "tag": "li",
+                    "value": "1,000 USDC"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "tag": "Text",
+            "value": "The pool has a 50:50 ratio, meaning your contribution is worth $2,000 in total."
+        },
+        {
+            "id": 12,
+            "tag": "SubHeading",
+            "value": "Scenario: ETH Price Doubles to $2,000"
+        },
+        {
+            "id": 13,
+            "tag": "Text",
+            "value": "The pool adjusts to maintain the constant product. The new ratio means less ETH and more USDC in the pool. You now hold approximately"
+        },
+        {
+            "id": 14,
+            "tag": "ul",
+            "value": [
+                {
+                    "id": 1,
+                    "tag": "li",
+                    "value": "0.707 ETH"
+                },
+                {
+                    "id": 2,
+                    "tag": "li",
+                    "value": "1,414 USDC"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "tag": "Text",
+            "value": "The total value of your assets in the pool is:"
+        },
+        {
+            "id": 16,
+            "tag": "CodeBox",
+            "value": "0.707 × 2000 + 1414 = 2828 USDC"
+          },
+          {
+            "id": 7,
+            "tag": "Text",
+            "value": "If you had simply held your tokens outside the pool, they would now be worth:"
+          },
+          {
+            "id": 8,
+            "tag": "CodeBox",
+            "value": "1 × 2000 + 1000 = 3000 USDC"
+          },
+        {
+            "id": 19,
+            "tag": "Text",
+            "value": "You lose $172 due to impermanent loss."
+        },
+        {
+            "id": 20,
+            "tag": "Heading",
+            "value": "Key Points to Consider"
+        },
+        {
+            "id": 21,
+            "tag": "ul",
+            "value": [
+                {
+                    "id": 1,
+                    "tag": "li",
+                    "value": "Loss Is Impermanent, It becomes permanent only when you withdraw your liquidity. If token prices return to their original ratio, the impermanent loss disappears."
+                },
+                {
+                    "id": 2,
+                    "tag": "li",
+                    "value": "Most AMMs charge a trading fee (e.g., 0.3% on Uniswap) which is distributed to liquidity providers. These fees can sometimes outweigh impermanent loss."
+                },
+                {
+                    "id": 3,
+                    "tag": "li",
+                    "value": "Pairs like USDC/USDT or DAI/USDC experience little impermanent loss because their prices are stable."
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "tag": "Heading",
+            "value": "Mitigation Strategies"
+        },
+        {
+            "id": 21,
+            "tag": "ul",
+            "value": [
+                {
+                    "id": 1,
+                    "tag": "li",
+                    "value": "Choose less volatile pairs"
+                },
+                {
+                    "id": 2,
+                    "tag": "li",
+                    "value": "Use impermanent loss calculators"
+                },
+                {
+                    "id": 3,
+                    "tag": "li",
+                    "value": "Participate in pools that earn you high fees or rewards"
+                }
+            ]
+        }
+    ]
+}

@@ -107,6 +107,17 @@ const SubHeading = styled.h4`
   }
 `;
 
+const SubSubHeading = styled.h5`
+  line-height: 1.8;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 650px) {
+    font-size: 14px;
+  }
+`;
+
 
 const Post = () => {
   const [post, setPost] = useState(null);
@@ -416,6 +427,8 @@ const Post = () => {
                 return <Heading key={id}>{value}</Heading>;            
             case "SubHeading":
                 return <SubHeading key={id}>{value}</SubHeading>;
+            case "SubSubHeading":
+                return <SubSubHeading key={id}>{value}</SubSubHeading>;
             case "CodeBox":
               return <CodeBox key={id}>{value}</CodeBox>;
             case "ol":

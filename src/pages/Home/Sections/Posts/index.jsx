@@ -25,6 +25,16 @@ const posts = [
     link: "/post/4",
     labels: ["python"],
   },
+  {
+    title: "DeFi: Impermanent Loss Explained",
+    link: "/post/5",
+    labels: ["DeFi"],
+  },
+  {
+    title: "My Favorite Reads of 2024",
+    link: "/post/6",
+    labels: ["reading"],
+  },
 ];
 
 const PostGrid = styled.div`
